@@ -224,23 +224,37 @@ number with the digits reversed.
    17 - Write a program to enter the numbers till the user wants and at the end the
 program should display the largest and smallest numbers entered.
     */
+      
         int number_17;
-        int smallest=0;
-        int largest=0;
+        int smallest;
+        int largest;
+        
+        System.out.println("Enter a number (or Zero to End): ");
+        number_17 = input.nextInt();
 
+        if (number_17 == 0) {
+            System.out.println("No valid numbers were entered.");
+            return;
+        }
+        smallest = number_17;
+        largest = number_17;
         do {
-            System.out.println("Enter number or Zero to End  ");
+            System.out.println("Enter another number (or Zero to End): ");
             number_17 = input.nextInt();
 
-            if (number_17 > largest){
-                largest=number_17;}
-            else if (number_17 < smallest ){
-                smallest=number_17;
+            if (number_17 == 0) {
+                break;
+            }
+            if (number_17 > largest) {
+                largest = number_17;
+            }
+            if (number_17 < smallest) {
+                smallest = number_17;
             }
 
-        }while (number_17 != 0);
-        System.out.println("largest " + largest);
-        System.out.println("smallest " + smallest);
+        } while (number_17 != 0);
+        System.out.println("Largest: " + largest);
+        System.out.println("Smallest: " + smallest);
         /*
         18 - Determine and print the number of times the character ‘a’ appears in the input
 entered by the user.
